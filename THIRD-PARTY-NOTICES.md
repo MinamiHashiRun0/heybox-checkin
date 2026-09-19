@@ -9,12 +9,14 @@
 | [yowiv08/heybox](https://github.com/yowiv08/heybox) | 签到接口流程、hkey `mode=request` 接口形状、签名参数集合 | 仓库未声明许可 |
 | [zpiz/scripts](https://github.com/zpiz/scripts) (`Egern/blackbox.js`) | 代理 App 双分支脚本结构 (cron + 抓包)、设备参数抓取思路 | 仓库未声明许可 |
 | [wqe134/xiaoheihe-autosign](https://github.com/wqe134/xiaoheihe-autosign) | 同一签到链路的旁证 | 仓库未声明许可 |
-| [chr233/Xiaoheihe_CSharp](https://github.com/chr233/Xiaoheihe_CSharp) | 确认 App 签名算法未公开 (其同样依赖外部 hkey 服务) | 见其仓库 |
-| [chavyleung/scripts](https://github.com/chavyleung/scripts) | BoxJs / Env.js 的存储与接口契约 (用于核实宿主适配层写法) | MIT |
+| [chr233/Xiaoheihe_CSharp](https://github.com/chr233/Xiaoheihe_CSharp) | 确认 App 签名算法未公开 (其同样依赖外部 hkey 服务); 其 `doc/hkey server.7z` 经查为打包后的服务端二进制, 非算法源码 | AGPL-3.0 |
+| [chavyleung/scripts](https://github.com/chavyleung/scripts) | BoxJs / Env.js 的存储与接口契约 (用于核实宿主适配层写法) | GPL-3.0 |
 
 ## 许可状况说明
 
 上述参考实现中的多数**未声明任何开源许可**, 因此本项目无法继承其许可, 仅在此做来源署名。
+
+其中两个为 copyleft 许可: `chr233/Xiaoheihe_CSharp` (AGPL-3.0) 与 `chavyleung/scripts` (GPL-3.0)。但**本项目未使用二者的任何代码** —— 前者仅读取其仓库目录结构, 用于确认签名算法未随附源码; 后者仅查阅其文档化的存储接口语义。宿主适配层为本项目自写, 仅调用各宿主的公开 API。因此本项目不构成二者的衍生作品, 得以按 MIT 发布。
 
 若你是上述项目的作者并认为此处署名方式不妥, 请开 issue。
 
