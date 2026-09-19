@@ -1,0 +1,13 @@
+#!name=小黑盒签到 v1.0.0
+#!desc=小黑盒每日定时签到 v1.0.0 (iOS) | MITM 抓包自动录入账号与设备参数, cron 定时签到, 已签到自动跳过 | 作者 MinamiHashiRun0 | 源码与说明 https://github.com/MinamiHashiRun0/heybox-checkin | 签到签名依赖第三方 hkey 服务
+
+[Script]
+heyboxSign = type=cron,cronexp="0 8 * * *",wake-system=true,timeout=60,script-path=https://raw.githubusercontent.com/MinamiHashiRun0/heybox-checkin/main/heybox.js?v=1.0.0
+heyboxCapture = type=http-request,pattern=^https?://(api|data)\.xiaoheihe\.cn/,script-path=https://raw.githubusercontent.com/MinamiHashiRun0/heybox-checkin/main/heybox.js?v=1.0.0
+heyboxPanel = type=generic,script-path=https://raw.githubusercontent.com/MinamiHashiRun0/heybox-checkin/main/heybox.js?v=1.0.0
+
+[Panel]
+HeyboxSign = title="小黑盒签到 v1.0.0",content="尚未运行\n开启 MITM 后打开小黑盒 App 完成录入",style=info,script-name=heyboxPanel
+
+[MITM]
+hostname = %APPEND% api.xiaoheihe.cn, data.xiaoheihe.cn
